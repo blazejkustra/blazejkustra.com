@@ -1,7 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectList from "@/components/project-list";
 import ShaderHero from "@/components/shader-hero";
 import { getAllPosts } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Błażej Kustra",
+  url: "https://blazejkustra.com",
+  image: "https://blazejkustra.com/images/avatar.jpg",
+  jobTitle: "Senior React Native Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Software Mansion",
+    url: "https://swmansion.com",
+  },
+  email: "mailto:kustrablazej@gmail.com",
+  sameAs: [
+    "https://github.com/blazejkustra",
+    "https://x.com/blazejkustra_",
+    "https://www.linkedin.com/in/kustrablazej/",
+  ],
+};
 
 const socials = [
   { label: "Email", href: "mailto:kustrablazej@gmail.com" },
@@ -15,6 +42,10 @@ export default function Home() {
 
   return (
     <main className="px-4 md:px-6 pt-20 md:pt-24 pb-24 md:pb-44 max-w-[640px] md:max-w-[960px] mx-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <div className="flex flex-col gap-16 md:gap-24">
         {/* Intro */}
         <section

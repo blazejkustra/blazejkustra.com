@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono, Instrument_Sans } from "next/font/google";
 import Nav from "@/components/nav";
 import "./globals.css";
@@ -34,11 +34,32 @@ export const metadata: Metadata = {
     siteName: "Błażej Kustra",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Błażej Kustra — Senior React Native Developer",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     creator: "@blazejkustra_",
+    images: ["/og.png"],
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fdfdfc" },
+    { media: "(prefers-color-scheme: dark)", color: "#161615" },
+  ],
 };
 
 export default function RootLayout({

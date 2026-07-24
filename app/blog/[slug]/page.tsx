@@ -18,11 +18,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
+    // Republished articles point their canonical at the original publication.
+    alternates: {
+      canonical: post.canonical ?? `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
+      url: `/blog/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -32,8 +42,26 @@ export default async function PostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const postJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    url: `https://blazejkustra.com/blog/${post.slug}`,
+    author: {
+      "@type": "Person",
+      name: "Błażej Kustra",
+      url: "https://blazejkustra.com",
+    },
+  };
+
   return (
     <article className="mb-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
+      />
       <h1 className="text-2xl font-bold mb-1 text-balance">{post.title}</h1>
       <p className="font-mono flex text-xs text-text-secondary mb-8">
         <span className="hidden md:inline">
