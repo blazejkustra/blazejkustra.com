@@ -247,3 +247,11 @@ body {
     animation: none;
   }
 }
+
+/* Hover previews on the post index are pointer-only: a touch device would
+   fire them on tap, on the way to opening the post. */
+@media (hover: none) {
+  .post-preview {
+    display: none;
+  }
+}
