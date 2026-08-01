@@ -25,21 +25,21 @@ The [Gauntlet loop](https://somethingbig.ai/gauntlet-loop) is Matt Shumer's meth
 That's it. That's the whole mechanism. Four rules make it work, and every one of them is about the critic:
 
 1. **The bar has to be inspectable.** Real screenshots in a folder. A test suite. A latency budget. Not _"make it amazing"_, which is self-graded and always passes.
-1. **The builder never grades its own work.** It remembers why every decision was reasonable, which is exactly the wrong context for judging the result.
+1. **The builder never grades its own work.** It remembers why every decision was made, which is exactly the wrong context for judging the result.
 1. **Fresh agents, every round.** A critic that passed your sprites in round two is defending that call by round five.
 1. **Give a goal, not an architecture.** The moment you prescribe the decomposition, the run is capped at your imagination instead of the model's. Let the lead agent split the work itself.
 
 All of it runs without me. The coordinator even automated the blind test: a script pastes our screenshot next to the reference, shuffles the sides, and hides the answer key. The critic gets two images and one question, "which one is better and why?"
 
-## Why it works now
+## Why it works
 
-The arrangement is ancient. Somebody builds, and somebody else who didn't build it reviews it against a spec, and neither gets to mark their own homework. Every functioning company runs this way.
+The setup is nothing new. Somebody builds, and somebody else who didn't build it reviews it against a spec, and neither gets to mark their own homework. Every sensible project runs this way.
 
-The thing is that current frontier models like Opus 5 can run whole arrangement like this on its own: split a goal into pieces, spawn dozens of subagents, keep each one on task, read the verdicts coming back, and pick what to fix next. For sixteen hours, without drifting off the goal or quietly forgetting the bar. 
+The thing is that current frontier models like Opus 5 can run whole arrangement like this on its own: split a goal into pieces, spawn dozens of subagents, keep each one on task, read the verdicts coming back, and pick what to fix next. For sixteen hours, without drifting off the goal or quietly forgetting the bar.
 
 ## What sixteen hours actually bought
 
-Most of what those hours produced was the rig around the game. You can't hand a critic a vibe, it needs something it can point at.
+Most of what those hours produced was the rig around the game. It's hard to hand a critic a vibe, it needs something it can point at.
 
 | | the loop, ~16 h | one shot, ~40 min |
 |---|---|---|
@@ -49,7 +49,7 @@ Most of what those hours produced was the rig around the game. You can't hand a 
 | Verification suites | 8, all passing | 0 |
 | Logged play sessions | 30 minutes, machine-recorded | 0 |
 
-So it built its own test equipment. One tool simulates half an hour of farming in seconds, no graphics involved, and checks the money grows steadily instead of spiking or stalling. A second one opens the real game in a browser and plays it properly for the full thirty minutes, clicking and typing like a person, logging anything that went wrong: zero rejected clicks, zero waits over twenty seconds, zero errors. A third renders the sound on its own to make sure nothing clipped.
+It built its own test equipment. One tool simulates half an hour of farming in seconds, no graphics involved, and checks the money grows steadily instead of spiking or stalling. A second one opens the real game in a browser and plays it properly for the full thirty minutes, clicking and typing like a person, logging anything that went wrong: zero rejected clicks, zero waits over twenty seconds, zero errors. A third A/B tests the sound on its own to make sure nothing clipped.
 
 I asked for none of that. You can't answer "is this cosy?" by looking at it, so the loop turned the question into numbers a fresh critic could check.
 
@@ -57,27 +57,27 @@ The first hour already produced a decent game. The next fifteen went into findin
 
 ## Where the loop hits its ceiling
 
-**The loop has no taste of its own.** The taste was in the reference folder, screenshots of a game somebody shipped in 2007. Naming that game is the one piece of judgement I contributed, and the run is worth nothing without it. The loop is very good at closing a measurable distance to a target.
+**The loop has no taste of its own.** The taste was in the reference folder, screenshots of a game somebody shipped in 2007. Naming that game is the only piece of judgement I contributed, and the run is worth nothing without it. The loop is very good at closing a measurable distance to a target.
 
-You can see the ceiling in the blind A/B, the test the loop graded itself against all night. Two screenshots, labels hidden, one question: which one is a game somebody shipped?
+You can see the ceiling in the blind A/B, the test the loop graded itself against all night. Two screenshots, labels hidden and just one question: which one is better?
 
 ![The blind A/B: the real game beside the generated one](/images/posts/gauntlet-loop-blind-ab.png)
 
 A is [Alice Greenfingers](https://iwin.com/games/alice-greenfingers), made by Arcade Lab in 2007. B is the overnight run. Four panels, twelve independent critic reads. Eleven picked A, most of them in under four seconds. The reasons they gave kept changing, round after round:
 
-> _"Era mismatch, instantly: B is post-Stardew indie pixel art — crisp uniform grid, flat saturated grass, modern sprite hygiene. Nobody in 2007 was making B."_
+> _"Era mismatch, instantly: B is post-Stardew indie pixel art — crisp uniform grid, flat saturated grass, modern sprite hygiene. A has this unique quality"_
 
-By the end the critics weren't saying the art was bad. They were saying it was too clean to be real. The reference has _"an ugly bottom-right mode dial"_ nobody would draw on purpose. A shipped game is full of things that only make sense once you've played it. Our farm looks like a showroom, one of everything, evenly spaced. A farm somebody actually played has empty corners, a half-finished patch, and things placed slightly wrong because a person put them there. Sixteen hours of self-correction converge on _correct_. They do not arrive at _lived-in_.
+By the end the critics weren't saying the art was bad. They were saying it was too clean to be real. The reference has _"an ugly bottom-right mode dial"_ nobody would draw on purpose. A shipped game is full of things that only make sense once you've played it. Our farm looks like a showroom, one of everything, evenly spaced. A farm somebody actually played has empty corners, a half-finished patch, and things placed slightly wrong because a person put them there. Sixteen hours of self-correction converge on _correct_.
 
 ## Play them
 
-Both run right here in the page, save as you go, and have a fullscreen button in the corner.
+Both run right here in the page, so you can see the difference for yourself!
 
-Gauntlet loop, sixteen hours. Click a bed to sow it, drag across a row to plant a strip, click the stall to sell:
+Gauntlet loop, sixteen hours. Click a bed to plant an eggplant, click the stall to sell:
 
 <iframe src="/games/alice-loop/index.html" width="320" height="240" title="Alice's Little Farm, built by a Gauntlet loop"></iframe>
 
-The one-shot, forty minutes. Click a plot to sow it, `Q` for the watering can, click the house to sleep:
+The one-shot, forty minutes. Same idea, just have to sleep to get plants to grow:
 
 <iframe src="/games/alice-oneshot/index.html" width="400" height="225" title="Greenfingers, built in a single session"></iframe>
 
