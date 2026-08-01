@@ -41,9 +41,9 @@ Looks like a recipe for a headache, right? Let’s break down the pain points:
 
 There are multiple libraries trying to solve this exact problem, such as [DynamoDB Toolbox](https://github.com/jeremydaly/dynamodb-toolbox) or [Dynamoose](https://github.com/dynamoose/dynamoose). But, what if we could do better? This question led to the birth of Dynamode.
 
-![](https://cdn-images-1.medium.com/max/700/1*zcT7eV5tdj0I52DKX4H0FQ.png)
+![](/images/posts/modeling-with-dynamodb-made-easy-in-typescript-1.png)
 
-![](https://cdn-images-1.medium.com/max/666/1*70F5U8_Mus-pwFM9Qka7mg.png)
+![](/images/posts/modeling-with-dynamodb-made-easy-in-typescript-2.png)
 
 ### Why Choose Dynamode?
 
@@ -306,9 +306,9 @@ const TypescriptMagicTableManager = new TableManager(TypescriptMagic, {
 const TypescriptMagicManager = TypescriptMagicTableManager.entityManager();
 ```
 
-![](https://cdn-images-1.medium.com/max/617/1*c8pwwclzKJhq_JFZgx3Upg.png)
+![](/images/posts/modeling-with-dynamodb-made-easy-in-typescript-3.png)
 
-![](https://cdn-images-1.medium.com/max/597/1*cBuaglP56KLLLZsitXDqtw.png)
+![](/images/posts/modeling-with-dynamodb-made-easy-in-typescript-4.png)
 
 *Autocomplete and type safety 🧙‍♂️*
 

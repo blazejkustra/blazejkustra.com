@@ -5,7 +5,7 @@ description: "A VS Code/Cursor extension that shows directly in your editor whic
 canonical: "https://medium.com/@kustrablazej/react-compiler-marker-visualizing-optimizations-in-vscode-cursor-82b0fc96126d"
 ---
 
-![Visualizing optimizations in your editor](https://cdn-images-1.medium.com/max/1024/1*siRnoizagrMogVIDfosPiA.png)
+![Visualizing optimizations in your editor](/images/posts/react-compiler-marker-visualizing-optimizations-in-vscode-cursor-1.png)
 
 When you adopt React Compiler (the compile-time optimizer that transforms React code into faster, memoized output), a remaining challenge is *observability*: how do you know which components got optimized, and which didn’t… and why? That’s exactly where [**react-compiler-marker**](https://marketplace.visualstudio.com/items?itemName=blazejkustra.react-compiler-marker) shines.
 
@@ -15,13 +15,13 @@ At its core, [**react-compiler-marker**](https://marketplace.visualstudio.com/it
 
 - ✅ Component *was* successfully optimized by the React Compiler
 
-![](https://cdn-images-1.medium.com/max/761/1*ZlO3FvsFzG29H06CNmYnbw.png)
+![](/images/posts/react-compiler-marker-visualizing-optimizations-in-vscode-cursor-2.png)
 
 *Optimized component*
 
 - ❌ Component *failed* optimization, along with the cause
 
-![](https://cdn-images-1.medium.com/max/761/1*TX2Xj67Fja80nwYvl1LiFA.png)
+![](/images/posts/react-compiler-marker-visualizing-optimizations-in-vscode-cursor-3.png)
 
 *Not optimized 😢*
 

@@ -5,7 +5,7 @@ description: "A deep dive into building a recursive FlattenObject TypeScript typ
 canonical: "https://medium.com/swmansion/deep-flatten-typescript-type-c0d123028d82"
 ---
 
-![Deep Flatten types in typescript](https://cdn-images-1.medium.com/max/1024/1*1Lvtiya47ZdkFm_D1WrUtw.png)
+![Deep Flatten types in typescript](/images/posts/deep-flatten-typescript-type-1.png)
 
 *“How deep does the rabbit hole go?” 💊* a famous line from the Matrix movie often comes to my mind when dealing with complex recursive types in TypeScript.
 
@@ -46,13 +46,13 @@ type FlattenedFoo = FlattenObject<Foo>;
 
 You might be wondering why anyone would need such a complicated type? Some time ago I stumbled on problem while developing Typescript modeling tool for DynamoDB — [dynamode](https://github.com/blazejkustra/dynamode).
 
-![Dynamode motto, a better way of using DynamoDB in typescript](https://cdn-images-1.medium.com/max/759/1*QfjK0T4SIuTlkBmMEJA9tQ.png)
+![Dynamode motto, a better way of using DynamoDB in typescript](/images/posts/deep-flatten-typescript-type-2.png)
 
 If you’ve ever worked with DynamoDB, a NoSQL database service from Amazon, you’ll likely be aware that the data is stored in a nested JSON-like format. While the database is quite efficient it becomes problematic when you want to query or update nested fields, there is no type safety and auto-completion out of the box.
 
 That’s precisely the point at which FlattenObject came into action. It served the dual purpose of bringing type safety and auto-completion to the table, simply by flattening the defined model.
 
-![](https://cdn-images-1.medium.com/proxy/1*c8pwwclzKJhq_JFZgx3Upg.png)
+![](/images/posts/deep-flatten-typescript-type-3.png)
 
 *Autocomplete and type safety 🧙‍♂️*
 

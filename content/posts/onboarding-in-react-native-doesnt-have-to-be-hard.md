@@ -5,7 +5,7 @@ description: "Introducing react-native-onboarding, a customizable library for bu
 canonical: "https://medium.com/swmansion/onboarding-in-react-native-doesnt-have-to-be-hard-d037cd383771"
 ---
 
-![](https://cdn-images-1.medium.com/max/1024/1*GUAwUgWn8RwE0gh48GVFSQ.png)
+![](/images/posts/onboarding-in-react-native-doesnt-have-to-be-hard-1.png)
 
 **Onboarding is usually the first thing users see in your app** and it’s surprisingly hard to get it right in React Native. Most developers either hack together a FlatList, wrestle with animations, or skip onboarding entirely. **The result? *A clunky first impression.***
 
@@ -68,7 +68,7 @@ function MyOnboarding() {
 }
 ```
 
-![](https://cdn-images-1.medium.com/max/1024/1*TJNHb2KXSt91JvujCTauGQ.gif)
+<video src="/images/posts/onboarding-in-react-native-doesnt-have-to-be-hard-2.mp4" aria-label="Onboarding flow demo"></video>
 
 *[Private Mind](https://github.com/software-mansion-labs/private-mind) onboarding with built-in styles*
 
@@ -93,7 +93,7 @@ Want to bring your own design system? You can swap out the intro panel, steps, b
 
 This way, you get all the animations and flow logic, but full freedom over visuals.
 
-![](https://cdn-images-1.medium.com/max/1024/1*Oe7psmUFHj9L0uvOxewhBA.gif)
+<video src="/images/posts/onboarding-in-react-native-doesnt-have-to-be-hard-3.mp4" aria-label="Customised onboarding demo"></video>
 
 *[Private Mind](https://github.com/software-mansion-labs/private-mind) onboarding in multiple styles*
 

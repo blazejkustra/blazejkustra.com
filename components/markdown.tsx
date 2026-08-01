@@ -58,6 +58,20 @@ const components: Components = {
   img: ({ src, alt }) => (
     <PostImage src={typeof src === "string" ? src : undefined} alt={alt} />
   ),
+  // Screen recordings ship as muted looping video rather than multi-megabyte GIFs.
+  video: ({ src, ...props }) => (
+    <video
+      {...props}
+      src={typeof src === "string" ? src : undefined}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className="my-6 block max-w-full rounded-md mx-auto"
+      style={{ boxShadow: "inset 0 0 0 1px var(--hairline)" }}
+    />
+  ),
   em: ({ children }) => <em>{children}</em>,
   details: ({ children }) => (
     <details className="my-6 group rounded-md border border-[var(--blockquote-border)] px-4 open:pb-2">

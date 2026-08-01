@@ -5,7 +5,7 @@ description: "A drop-in replacement for React Native's Alert API that brings con
 canonical: "https://medium.com/@kustrablazej/react-native-alert-cross-platform-alerts-prompts-that-just-work-fe1bf6278acb"
 ---
 
-![react-native-alert just works](https://cdn-images-1.medium.com/max/1024/1*dwgxuAcVy3xpleIcCsUcJw.png)
+![react-native-alert just works](/images/posts/react-native-alert-cross-platform-alerts-prompts-that-just-work-1.png)
 
 Every React Native developer has hit this at some point: **React Native API’s interface differ between platforms and it’s a mess to work with.**
 
@@ -64,7 +64,7 @@ Alert.prompt(
 
 Works the same as the built-in Alert, but now you also get prompts on web + consistent UX across platforms.
 
-![](https://cdn-images-1.medium.com/max/1024/0*vNVIcsgqfMNeleVC.png)
+![](/images/posts/react-native-alert-cross-platform-alerts-prompts-that-just-work-2.png)
 
 *Alerts on all three platforms*
 

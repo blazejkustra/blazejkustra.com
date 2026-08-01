@@ -9,7 +9,7 @@ If you’re someone who regularly works with AWS and DynamoDB, you may well be f
 
 However, times have changed. The just-launched **Dynamode v1.0.0** is here to change the game.
 
-![Dynamode v1.0.0 just launched!](https://cdn-images-1.medium.com/max/1024/1*3jpMkRRSmdhj_-DoBVBXGw.png)
+![Dynamode v1.0.0 just launched!](/images/posts/how-to-handle-dynamodb-streams-the-easy-way-in-typescript-1.png)
 
 ## Introducing Dynamode v1.0.0
 
