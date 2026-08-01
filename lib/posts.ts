@@ -11,6 +11,8 @@ export type Post = {
   content: string;
   /** First image in the post, used as the cover in hover previews. */
   cover?: string;
+  /** Social card: the frontmatter `image`, else the cover, else the site card. */
+  ogImage: { url: string; width: number; height: number };
   /** First real paragraph, flattened to plain text for hover previews. */
   excerpt: string;
 };
@@ -20,6 +22,31 @@ const postsDirectory = path.join(process.cwd(), "content/posts");
 /** The first markdown image in a post, local path or remote URL. */
 function firstImage(content: string): string | undefined {
   return content.match(/!\[[^\]]*\]\(([^)\s]+)/)?.[1];
+}
+
+const SITE_CARD = { url: "/og.png", width: 1200, height: 630 };
+
+/** PNG dimensions straight out of the IHDR chunk, no image library needed. */
+function pngSize(publicPath: string): { width: number; height: number } | null {
+  try {
+    const file = path.join(process.cwd(), "public", publicPath);
+    const head = fs.readFileSync(file).subarray(0, 33);
+    if (head.subarray(1, 4).toString() !== "PNG") return null;
+    return { width: head.readUInt32BE(16), height: head.readUInt32BE(20) };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * The card social platforms show. Facebook and Messenger in particular skip
+ * the image when the page doesn't declare its size, so local files get
+ * measured at build time and anything remote falls back to the site card.
+ */
+function socialCard(image: string | undefined) {
+  if (!image?.startsWith("/")) return SITE_CARD;
+  const size = pngSize(image);
+  return size ? { url: image, ...size } : SITE_CARD;
 }
 
 /**
@@ -65,6 +92,7 @@ export function getAllPosts(): Post[] {
         canonical: data.canonical as string | undefined,
         content,
         cover: firstImage(content),
+        ogImage: socialCard((data.image as string) ?? firstImage(content)),
         excerpt: firstParagraph(content),
       };
     })

@@ -1,6 +1,7 @@
 ---
 title: "The Gauntlet Loop Rebuilt a Game I Loved as a Kid"
 date: "2026-08-01"
+image: "/images/posts/gauntlet-loop-og.png"
 description: "One prompt, sixteen hours overnight, and a cosy pixel-art farm game that kept grading and fixing itself. How the Gauntlet loop works, where it hits its ceiling, and the parts worth using on everyday work."
 ---
 
