@@ -1,6 +1,10 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import type { Components } from "react-markdown";
+import LoopDiagram from "./loop-diagram";
+import GameEmbed from "./game-embed";
+import PostImage from "./post-image";
 
 const components: Components = {
   p: ({ children }) => <p className="my-5 [blockquote_&]:my-2">{children}</p>,
@@ -52,16 +56,30 @@ const components: Components = {
   ),
   hr: () => <div className="my-8 text-sm text-center">﹡﹡﹡</div>,
   img: ({ src, alt }) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={typeof src === "string" ? src : undefined}
-      alt={alt ?? ""}
-      loading="lazy"
-      className="my-6 max-w-full rounded-md mx-auto"
-      style={{ boxShadow: "inset 0 0 0 1px var(--hairline)" }}
-    />
+    <PostImage src={typeof src === "string" ? src : undefined} alt={alt} />
   ),
   em: ({ children }) => <em>{children}</em>,
+  details: ({ children }) => (
+    <details className="my-6 group rounded-md border border-[var(--blockquote-border)] px-4 open:pb-2">
+      {children}
+    </details>
+  ),
+  summary: ({ children }) => (
+    <summary className="py-3 cursor-pointer font-mono text-xs text-text-secondary hover:text-text-primary transition-colors marker:text-text-secondary">
+      {children}
+    </summary>
+  ),
+  // Posts occasionally embed something playable. Same-origin, from /public.
+  // width/height give the frame the game's native aspect; it always spans the
+  // full text column.
+  iframe: ({ src, title, width, height }) => (
+    <GameEmbed
+      src={typeof src === "string" ? src : ""}
+      title={title}
+      width={Number(width) || undefined}
+      height={Number(height) || undefined}
+    />
+  ),
   table: ({ children }) => (
     <div className="my-6 overflow-x-auto">
       <table className="w-full text-sm border-collapse">{children}</table>
@@ -79,9 +97,20 @@ const components: Components = {
   ),
 };
 
+// Custom element names are legal keys at runtime, but the published type only
+// covers intrinsic HTML tags, so the extra entry goes on afterwards.
+const withCustomElements = {
+  ...components,
+  "loop-diagram": () => <LoopDiagram />,
+} as Components;
+
 export default function Markdown({ content }: { content: string }) {
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
+      components={withCustomElements}
+    >
       {content}
     </ReactMarkdown>
   );

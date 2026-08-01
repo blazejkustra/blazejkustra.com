@@ -209,3 +209,41 @@ body {
   text-decoration-style: solid;
   color: var(--text-primary);
 }
+
+/* Crawling dashes along the loop diagram's edges, so the direction of travel
+   reads without needing a caption. Stilled when the reader asks for less motion. */
+@keyframes diagram-flow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+
+.diagram-flow {
+  stroke-dasharray: 3 15;
+  stroke-linecap: round;
+  animation: diagram-flow 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram-flow {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Image lightbox: a quick fade so the jump to full size doesn't feel abrupt. */
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.lightbox {
+  animation: lightbox-in 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    animation: none;
+  }
+}
