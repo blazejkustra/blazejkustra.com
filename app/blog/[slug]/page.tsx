@@ -15,6 +15,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  // Metadata merges shallowly, so openGraph/twitter here replace the layout's
+  // versions entirely: without this the post would share with no thumbnail.
+  // Remote covers (Medium's CDN) are skipped in favour of the site card.
+  const image = post.cover?.startsWith("/") ? post.cover : "/og.png";
   return {
     title: post.title,
     description: post.description,
@@ -28,11 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       url: `/blog/${slug}`,
+      images: [{ url: image, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: [image],
     },
   };
 }
