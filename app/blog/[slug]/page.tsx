@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Markdown from "@/components/markdown";
+import ViewCount from "@/components/view-count";
 import { getAllPosts, getPost, formatDate, relativeTime } from "@/lib/posts";
 
 type Props = {
@@ -83,6 +84,9 @@ export default async function PostPage({ params }: Props) {
         <span>
           {formatDate(post.date)} ({relativeTime(post.date)})
         </span>
+        {/* Pushed to the right edge so it can appear late without shifting
+            the date, and leaves no dangling separator if it never loads. */}
+        <ViewCount slug={post.slug} className="ml-auto pl-4" />
       </p>
       <div className="text-post leading-relaxed font-normal text-text-primary">
         <Markdown content={post.content} />

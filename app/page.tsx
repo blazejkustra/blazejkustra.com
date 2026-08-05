@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectList from "@/components/project-list";
 import ShaderHero from "@/components/shader-hero";
+import ViewCount from "@/components/view-count";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -164,6 +165,11 @@ export default function Home() {
             </li>
           </ol>
         </section>
+
+        <ViewCount
+          slug="home"
+          className="font-mono text-xs text-text-secondary"
+        />
       </div>
     </main>
   );

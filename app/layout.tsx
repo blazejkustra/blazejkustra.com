@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono, Instrument_Sans } from "next/font/google";
 import Nav from "@/components/nav";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,6 +76,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Nav />
         {children}
+        <Analytics />
       </body>
     </html>
   );
