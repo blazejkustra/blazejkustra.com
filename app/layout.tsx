@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     template: "%s | Błażej Kustra",
   },
   description:
-    "Senior React Native Developer at Software Mansion. Building universal apps, open source libraries, and CookinBuddy.",
+    "DevRel at Software Mansion, working on Argent. Building mobile apps, open source libraries, and CookinBuddy.",
   openGraph: {
     title: "Błażej Kustra",
     description:
-      "Senior React Native Developer at Software Mansion. Building universal apps, open source libraries, and CookinBuddy.",
+      "DevRel at Software Mansion, working on Argent. Building mobile apps, open source libraries, and CookinBuddy.",
     url: "https://blazejkustra.com",
     siteName: "Błażej Kustra",
     locale: "en_US",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Błażej Kustra — Senior React Native Developer",
+        alt: "Błażej Kustra — DevRel at Software Mansion",
       },
     ],
   },

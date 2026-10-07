@@ -17,7 +17,7 @@ const personJsonLd = {
   name: "Błażej Kustra",
   url: "https://blazejkustra.com",
   image: "https://blazejkustra.com/images/avatar.jpg",
-  jobTitle: "Senior React Native Developer",
+  jobTitle: "Developer Relations",
   worksFor: {
     "@type": "Organization",
     name: "Software Mansion",
@@ -61,7 +61,7 @@ export default function Home() {
           </h1>
           <div className="relative z-10 pointer-events-none flex flex-col gap-4 text-sm text-text-secondary leading-relaxed">
             <p>
-              Senior React Native Developer at{" "}
+              DevRel at{" "}
               <a
                 className="link"
                 href="https://swmansion.com"
@@ -70,12 +70,15 @@ export default function Home() {
               >
                 Software Mansion
               </a>
-              , based in Kraków, Poland. For 6+ years I&apos;ve been building
-              mobile and universal apps that ship to real users.
+              , based in Kraków, Poland. After 6+ years of building mobile
+              apps for clients, I moved into Developer Relations. Now I&apos;m
+              working on Argent, using what I learned about what makes dev
+              tools great (and what makes them painful) to help make it the
+              best place to build mobile apps.
             </p>
             <p>
               I maintain open source libraries with over 1,000 stars on GitHub,
-              ran a workshop on universal React Native apps at{" "}
+              ran a workshop on universal apps at{" "}
               <a
                 className="link"
                 href="https://appjs.co"
@@ -93,12 +96,12 @@ export default function Home() {
               >
                 CookinBuddy
               </a>
-              . Lately I&apos;m deep into agentic engineering — using AI agents
+              . Lately I&apos;m deep into agentic engineering: using AI agents
               to ship faster without cutting corners.
             </p>
             <p>
-              If you want to talk React Native, open source, or something
-              you&apos;re building,{" "}
+              If you want to talk mobile apps, dev tools, open source, or
+              something you&apos;re building,{" "}
               <a className="link" href="mailto:kustrablazej@gmail.com">
                 get in touch
               </a>

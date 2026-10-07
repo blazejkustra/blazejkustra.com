@@ -1,6 +1,6 @@
 # blazejkustra.com
 
-Personal site of Błażej Kustra — Senior React Native Developer at Software Mansion.
+Personal site of Błażej Kustra — DevRel at Software Mansion, working on Argent.
 
 ## Stack
 
