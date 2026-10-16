@@ -10,6 +10,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Uncut",
+    description: "AI-first video editor for the Mac where Claude Code edits a real timeline",
+    meta: "2026 · open source macOS app",
+    href: "https://uncut.video",
+    image: "/projects/uncut.jpg",
+    aspect: "1600 / 1000",
+  },
+  {
     title: "CookinBuddy",
     description: "Your magical kitchen sidekick — recipes, groceries & AI chef for iOS",
     meta: "2026 · iOS app",
