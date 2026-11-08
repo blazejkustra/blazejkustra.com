@@ -11,14 +11,15 @@ export const metadata: Metadata = {
 };
 
 const content = `
-Snooze Tax is an alarm clock with timers, a stopwatch and a world clock. Stopping an alarm is free. Snoozing costs money, and every snooze costs more than the last.
+Snooze Tax is an alarm clock with timers, a stopwatch and a world clock. Stopping an alarm is free. Your first snooze is free. After that, snoozing costs money, and every snooze costs more than the last.
 
 ## How snooze pricing works
 
 - When an alarm rings, Stop is free. Snooze opens the app and shows the price of your next snooze.
+- Your first snooze after installing the app is free. Every snooze after that is a paid one-time purchase.
 - If you pay, the alarm rings again after its snooze time. If you cancel or wait, it rings again in 2 minutes.
-- Prices climb through fixed steps, from about $0.99 to about $99.99 in the US, and stay at the top step. Your local App Store price is shown before you pay.
-- The price never resets. It is tied to your purchase history, so reinstalling the app does not lower it.
+- Paid snoozes climb through fixed steps, from about $0.99 to about $99.99 in the US, and stay at the top step. Your local App Store price is shown before you pay.
+- The paid price never resets. It is tied to your purchase history, so reinstalling the app does not lower it.
 
 ## How much have I spent?
 
