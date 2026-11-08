@@ -16,7 +16,7 @@ These terms apply when you use Snooze Tax. By using the app you agree to them. [
 ## Paid snoozes
 
 - Stopping an alarm is always free.
-- Your first snooze on each install of the app is free.
+- Your first snooze is free.
 - After that, each snooze is a consumable, one-time in-app purchase. It is used up the moment the snooze starts and cannot be saved, transferred or reused.
 - Every paid snooze costs more than the one before. The price starts at the lowest tier (about $0.99 in the US) and climbs through fixed steps up to the highest tier (about $99.99 in the US), where it stays. The paid price never resets, including after you reinstall the app.
 - The app always shows the exact price in your currency before you pay, and Apple asks you to confirm every purchase.
