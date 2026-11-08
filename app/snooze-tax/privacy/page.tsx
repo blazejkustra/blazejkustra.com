@@ -29,7 +29,9 @@ I use this data only to process purchases and keep your snooze price correct. It
 
 ## What stays on your device
 
-Your alarms and their labels, timers, stopwatch, world clock cities, and theme and clock face choices are stored only on your iPhone, in storage shared between the app and its widgets. The app also keeps a local copy of your snooze bill there so the widget can show it. None of this is sent to me. They may be included in your own device or iCloud backup. Deleting the app removes them, except for the random purchase ID in the keychain.
+Your alarms and their labels, timers, stopwatch, world clock cities, and theme and clock face choices are stored only on your iPhone, in storage shared between the app and its widgets. The app also keeps a local copy of your snooze bill there so the widget can show it. None of this is sent to me. They may be included in your own device or iCloud backup. Deleting the app removes them.
+
+Two small items are kept in your iPhone's keychain and survive deleting the app: the random purchase ID described above, and the date you used your free first snooze, which keeps the free snooze to once per device. That date stays on your iPhone.
 
 The world clock uses a list of cities built into the app and your iPhone's time zone setting. The app never asks for your location.
 
